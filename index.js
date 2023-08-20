@@ -2,8 +2,10 @@ const inquirer = require('inquirer')
 
 const fs = require('fs')
 
+const { Circle, Square, Triangle } = require('./lib/shapes/shape')
+
 const { textValidate, textColorValidate, shapeColorValidate } = require('./utils/validate')
-const { Circle, Square, Triangle} = require('./lib/shapes/shape')
+
 
 const questions = [
     {
@@ -32,27 +34,27 @@ const questions = [
     }
 ]
 
-function writeTofile(fileName, answers) {
-    const {
-        text,
-        textColor,
-        shape,
-        shapeColor
-    } = answers
-}
-
 inquirer.prompt(questions).then((answers) => {
     let shape;
     switch (answers.shape) {
         case 'Circle':
-            shape = new Circle()
+            shape = new Circle();
             break;
         case 'Square':
-            shape = new Square()
+            shape = new Square();
             break;
         case 'Triangle':
-            shape = new Triangle()
+            shape = new Triangle();
             break;
     }
+    shape.setColor(answers.shapeColor);
 
-})
+    const svgContent = `
+    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+        ${shape.render()}
+        <text x="150" y="100" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>
+    </svg>`;
+
+    fs.writeFileSync('logo.svg', svgContent);
+    console.log('Generated logo.svg');
+});
