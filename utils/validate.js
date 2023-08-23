@@ -1,4 +1,6 @@
-const chroma = require('chroma.js')
+import chroma from 'chroma-js'
+
+
 function textValidate(text) {
     if (text.length > 3){
         return "Text must be maximum of 3 characters long.";
@@ -20,4 +22,4 @@ function shapeColorValidate(shapeColor){
     return true;
 }
 
-module.exports = {textValidate, textColorValidate, shapeColorValidate}
+export {textValidate, textColorValidate, shapeColorValidate}

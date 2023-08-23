@@ -1,10 +1,10 @@
-const inquirer = require('inquirer')
+import inquirer from 'inquirer';
 
-const fs = require('fs')
+import fs from 'fs';
 
-const { Circle, Square, Triangle } = require('./lib/shapes/shape')
+import { Circle, Square, Triangle } from './lib/shapes/shape.js';
 
-const { textValidate, textColorValidate, shapeColorValidate } = require('./utils/validate')
+import { textValidate, textColorValidate, shapeColorValidate } from './utils/validate.js';
 
 
 const questions = [
@@ -33,8 +33,8 @@ const questions = [
         validate: shapeColorValidate
     }
 ]
-
-inquirer.prompt(questions).then((answers) => {
+async function main() {
+    const answers = await inquirer.prompt(questions);
     let shape;
     switch (answers.shape) {
         case 'Circle':
@@ -52,9 +52,12 @@ inquirer.prompt(questions).then((answers) => {
     const svgContent = `
     <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
         ${shape.render()}
-        <text x="150" y="100" text-anchor="middle" fill="${answers.textColor}">${answers.text}</text>
+        <text x="150" y="100" dominant-baseline="middle" text-anchor="middle" font-size="50" font-family="Arial, Helvetica, sans-serif" fill="${answers.textColor}">${answers.text}</text>
     </svg>`;
 
     fs.writeFileSync('logo.svg', svgContent);
     console.log('Generated logo.svg');
-});
+
+};
+
+main()
