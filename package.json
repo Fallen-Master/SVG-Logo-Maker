@@ -20,6 +20,11 @@
   "dependencies": {
     "chroma-js": "^2.4.2",
     "inquirer": "^9.2.10",
-    "jest": "^29.6.2"
+    "jest": "^29.6.4"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.10",
+    "@jest/environment": "^29.6.4",
+    "@jest/globals": "^29.6.4"
   }
 }

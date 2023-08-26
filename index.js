@@ -1,10 +1,10 @@
-import inquirer from 'inquirer';
+const inquirer = require('inquirer');
 
-import fs from 'fs';
+const fs = require('fs');
 
-import { Circle, Square, Triangle } from './lib/shapes/shape.js';
+const { Circle, Square, Triangle } = require('./lib/shapes/shape.js');
 
-import { textValidate, textColorValidate, shapeColorValidate } from './utils/validate.js';
+const { textValidate, textColorValidate, shapeColorValidate } = require('./utils/validate.js');
 
 
 const questions = [
