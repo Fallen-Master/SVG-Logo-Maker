@@ -1,4 +1,4 @@
-import chroma from 'chroma-js'
+const chroma = require('chroma-js')
 
 
 function textValidate(text) {
@@ -22,4 +22,4 @@ function shapeColorValidate(shapeColor){
     return true;
 }
 
-export {textValidate, textColorValidate, shapeColorValidate}
+module.exports =  {textValidate, textColorValidate, shapeColorValidate}
