@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/license-MIT-blue)
     
 ## Description
-This project is meant to generate simple logos, for simple companies. 
+This project is meant to generate simple logos, for simple companies. [Example video](https://drive.google.com/file/d/1xcMZGt7kB8Wdek3MhaYRp-bM34hYsJv0/view?usp=sharing)
   
 ## Table of Contents
 - [Installation](#installation)
@@ -36,4 +36,4 @@ npm test
   
 ## Questions 
 If you have any questions about the repo, open an issue or contact me directly at [rgomez2014@gmail.com](mailto:rgomez2014@gmail.com). 
-You can find more of my work at [Fallen-Master](https://github.com/Fallen-Master))
+You can find more of my work at [Fallen-Master](https://github.com/Fallen-Master)
