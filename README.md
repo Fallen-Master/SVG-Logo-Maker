@@ -3,7 +3,7 @@
 ![Static Badge](https://img.shields.io/badge/license-MIT-blue)
     
 ## Description
-This project is meant to generate simple logos, for simple companies. [Example video](https://drive.google.com/file/d/1xcMZGt7kB8Wdek3MhaYRp-bM34hYsJv0/view?usp=sharing)
+This project is meant to generate simple logos, for simple companies. [Example video](https://drive.google.com/file/d/1rOQlcJ4kmllCEP0wbnFWcvnctzdrSsIm/view?usp=sharing)
   
 ## Table of Contents
 - [Installation](#installation)
