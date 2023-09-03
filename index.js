@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 
 const fs = require('fs');
 
-const SVG = require('./SVG');
+const SVG = require('./lib/shapes/svg.js');
 
 const { Circle, Square, Triangle } = require('./lib/shapes/shape.js');
 
