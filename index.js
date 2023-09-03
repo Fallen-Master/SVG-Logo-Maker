@@ -2,6 +2,8 @@ const inquirer = require('inquirer');
 
 const fs = require('fs');
 
+const SVG = require('./SVG');
+
 const { Circle, Square, Triangle } = require('./lib/shapes/shape.js');
 
 const { textValidate, textColorValidate, shapeColorValidate } = require('./utils/validate.js');
@@ -49,12 +51,8 @@ async function main() {
     }
     shape.setColor(answers.shapeColor);
 
-    const svgContent = `
-    <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        ${shape.render()}
-        <text x="150" y="100" dominant-baseline="middle" text-anchor="middle" font-size="50" font-family="Arial, Helvetica, sans-serif" fill="${answers.textColor}">${answers.text}</text>
-    </svg>`;
-
+    const svg = new SVG(shape, answers.text, answers.textColor);
+    const svgContent = svg.generate();
     fs.writeFileSync('logo.svg', svgContent);
     console.log('Generated logo.svg');
 
